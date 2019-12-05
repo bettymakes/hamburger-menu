@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  font-size: 2rem;
+}
+
+main {
+  padding: 4rem 8rem;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.hamburglar-pic {
+  max-width: 40rem;
+}
+
+/* HAMBURGER MENU STYLE RULES =============================================== */
+.menu-container {
+  display: grid;
+  justify-content: flex-end;
+}
+
+.menu {
+  all: unset;
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: relative;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.menu-line-top,
+.menu-line-middle-front,
+.menu-line-middle-back,
+.menu-line-bottom {
+  content: "";
+  width: 2.5rem;
+  height: 0.35rem;
+  position: absolute;
+  background-color: white;
+  opacity: 1;
+}
+
+.menu-line-top {
+  top: 0;
+}
+
+.menu-line-middle-front,
+.menu-line-middle-back {
+  top: calc(0.5rem * 2);
+  transition: transform 150ms linear;
+}
+
+.menu-line-bottom {
+  top: calc(0.5rem * 4);
+}
+
+.menu-expanded .menu-line-top,
+.menu-expanded .menu-line-bottom {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+.menu-expanded .menu-line-middle-front {
+  transform: rotate(45deg);
+}
+
+.menu-expanded .menu-line-middle-back {
+  transform: rotate(-45deg);
+}
+
+
+/* SIDEBAR STYLE RULES ====================================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 35rem;
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  /* transform: translateX(-28.5rem); */
+  /* left: 0; */
+  left: -28.5rem;
+  transition: left 150ms ease;
+}
+
+.sidebar-expanded {
+  left: 0;
+}
